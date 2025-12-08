@@ -351,7 +351,7 @@ cbb <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55
 plot1 <- ggplot(df1, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[1]*': Independence')) +
+  labs(title=bquote(psi['1,1']*': Independence')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -397,7 +397,7 @@ df2 <- data.frame(n = c(seq(30, 90, 5), seq(30, 90, 1)),
 plot2 <- ggplot(df2, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[2]*': Exchangeable')) +
+  labs(title=bquote(psi['1,2']*': Exchangeable')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -443,7 +443,7 @@ df3 <- data.frame(n = c(seq(30, 90, 5), seq(30, 90, 1)),
 plot3 <- ggplot(df3, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[3]*': AR(1)')) +
+  labs(title=bquote(psi['1,3']*': AR(1)')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -489,7 +489,7 @@ df4 <- data.frame(n = c(seq(30, 90, 5), seq(30, 90, 1)),
 plot4 <- ggplot(df4, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[4]*': Unstructured')) +
+  labs(title=bquote(psi['1,4']*': Unstructured')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -522,7 +522,7 @@ figp <- plot_grid(figp.row1, figp.row2, nrow = 2)
 plot1.legend <- ggplot(df1, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[1]*': Independence')) +
+  labs(title=bquote(psi['1,1']*': Independence')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +

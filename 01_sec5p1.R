@@ -657,6 +657,7 @@ pwr_point_null <- function(m1, m2, n0, n1, lb, ub, by, gam){
 }
 
 ## get power curve using naive simulation
+n_vals <- seq(500,1200,50)
 alpha <- 0.1
 pwr <- NULL
 ## read in results from each saved .csv file and calculate power empirically
@@ -686,7 +687,7 @@ cbb <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55
 plot1 <- ggplot(df1, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[1]*': Weibull Baseline Hazard')) +
+  labs(title=bquote(psi['1,1']*': Weibull Baseline Hazard')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -730,7 +731,7 @@ df2 <- data.frame(n = c(seq(500, 1200, 50), seq(500, 1200, 1)),
 plot2 <- ggplot(df2, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[2]*': Simpler Propensity Score')) +
+  labs(title=bquote(psi['1,2']*': Simpler Propensity Score')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -774,7 +775,7 @@ df3 <- data.frame(n = c(seq(500, 1200, 50), seq(500, 1200, 1)),
 plot3 <- ggplot(df3, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[3]*': Simpler Survival Model')) +
+  labs(title=bquote(psi['1,3']*': Simpler Survival Model')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -818,7 +819,7 @@ df4 <- data.frame(n = c(seq(500, 1200, 50), seq(500, 1200, 1)),
 plot4 <- ggplot(df4, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[4]*': New Covariate Distributions')) +
+  labs(title=bquote(psi['1,4']*': New Covariate Distributions')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -862,7 +863,7 @@ df5 <- data.frame(n = c(seq(500, 1200, 50), seq(500, 1200, 1)),
 plot5 <- ggplot(df5, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[5]*': Lognormal Baseline Hazard')) +
+  labs(title=bquote(psi['1,5']*': Lognormal Baseline Hazard')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -906,7 +907,7 @@ df6 <- data.frame(n = c(seq(500, 1200, 50), seq(500, 1200, 1)),
 plot6 <- ggplot(df6, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[6]*': Piecewise Baseline Hazard')) +
+  labs(title=bquote(psi['1,6']*': Piecewise Baseline Hazard')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
@@ -942,7 +943,7 @@ figp <- plot_grid(figp.row1, figp.row2, figp.row3, nrow = 3)
 plot1.legend <- ggplot(df1, aes(x=n)) + theme_bw() +
   geom_line(aes(y = power, color=as.factor(curve), linetype = as.factor(curve)), 
             alpha = 0.9, size = 1) +
-  labs(title=bquote(psi[1]*': Weibull Baseline Hazard')) +
+  labs(title=bquote(psi['1,1']*': Weibull Baseline Hazard')) +
   labs(x= bquote(italic(n)), y= bquote('Power')) +
   theme(plot.title = element_text(size=18,face="bold", hjust =  0.5,
                                   margin = margin(t = 0, 0, 5, 0))) +
