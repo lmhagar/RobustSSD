@@ -229,7 +229,7 @@ for (j in 1:length(ns)){
                        
                        ## generate data
                        temp.dat <- gen_cluster(n, corr_struct = "unstructured",
-                                               corr_param = c(0.05, 0.05, 0.05, 0.05, 0.3, 0.2, 0.1, 0.3,0.2,0.1))
+                                               corr_param = c(0.05, 0.05, 0.05, 0.05, 0.3, 0.2, 0.1, 0.3,0.2,0.3))
                        
                        fit <- geese(y~x1*x2+offset(log(t)), id=id, corstr="independence",
                                     family="poisson", data=temp.dat)
@@ -557,7 +557,7 @@ dev.off()
 ## now implement the confirmatory simulations for Appendix E
 
 ## get recommended sample size (robust)
-ns <- 69
+ns <- 70
 
 ## confirmation for Psi_1 (power)
 for (j in 1:length(ns)){
@@ -820,8 +820,8 @@ for (j in 1:length(ns)){
 ## get the confirmatory estimates for power and the type I error rate
 
 ## get the file names for power
-files <- c("conf_gee_ind_n_69.csv", "conf_gee_exc_n_69.csv",
-           "conf_gee_ar1_n_69.csv", "conf_gee_uns_n_69.csv")
+files <- c("conf_gee_ind_n_70.csv", "conf_gee_exc_n_70.csv",
+           "conf_gee_ar1_n_70.csv", "conf_gee_uns_n_70.csv")
 
 ## get a vector of power estimates for each scenario
 pwr_conf <- NULL
@@ -831,8 +831,8 @@ for (j in 1:length(files)){
 }
 
 ## get file names for H0
-filesH0 <- c("conf_H0_gee_ind_n_69.csv", "conf_H0_gee_exc_n_69.csv",
-             "conf_H0_gee_ar1_n_69.csv", "conf_H0_gee_uns_n_69.csv")
+filesH0 <- c("conf_H0_gee_ind_n_70.csv", "conf_H0_gee_exc_n_70.csv",
+             "conf_H0_gee_ar1_n_70.csv", "conf_H0_gee_uns_n_70.csv")
 
 ## get a vector of type I error estimates for each scenario
 t1E_conf <- NULL
